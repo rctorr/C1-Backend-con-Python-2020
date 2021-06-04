@@ -1,5 +1,5 @@
 [`Backend con Python`](../Readme.md) > `Sesión 07`
-# Sesión 7: Deploy: Heroku, Amazon EC2, Amazon S3,
+# Sesión 7: Deploy en PythonAnyWhere
 
 ## :dart: Objetivos
 
