@@ -64,7 +64,7 @@
 1. Mapear la url `/servicios` con las rutas de la aplicación __servicios__
 
    ```
-   url /perfiles -> Banco/servicios/urls.py -> Banco/servicios/views.py
+   url /servicios/ -> Banco/servicios/urls.py -> Banco/servicios/views.py
    ```
 
    __Crear el archivo `Banco/servicios/urls.py` con el siguiente contenido:__
