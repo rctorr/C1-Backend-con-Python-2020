@@ -10,7 +10,7 @@
 1. Usar la carpeta de trabajo `Sesion-03/Reto-04`
 1. Diagrama del modelo entidad-relación para el proyecto __Bedutravels__
 
-   ![Modelo entidad-relación para Bedutravels](bedutravels-modelo-er.png)
+   ![Modelo entidad-relación para Bedutravels](assets/bedutravels-modelo-er.png)
 
 ### DESARROLLO
 El RETO consiste en modificar la página de inicio, en su columna izquierda para que en la lista de Destinos, muestre la lista de Zonas disponibles.

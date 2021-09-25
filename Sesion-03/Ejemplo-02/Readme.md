@@ -9,7 +9,7 @@
 1. Usar la carpeta de trabajo `Sesion-03/Ejemplo-02`
 1. Diagrama del modelo entidad-relación para el proyecto __Bedutravels__
 
-   ![Modelo entidad-relación para Bedutravels](assets/bedutravels-modelo-er.jpg)
+   ![Modelo entidad-relación para Bedutravels](assets/bedutravels-modelo-er.png)
 
 1. Documentación de Django referente a modelos:
    - Descripción de modelos y ejemplos: https://docs.djangoproject.com/en/2.2/topics/db/models/
