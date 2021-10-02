@@ -31,6 +31,14 @@
               {% csrf_token %}
               Usuario: <input type="text" name="username" value="">
               Clave: <input type="password" name="password" value="">
+
+              <!-- Para indicar a que url se redirige después de hacer login -->
+              {% if next %}
+              <input type="hidden" name="next" value="{{ next }}" />
+              {% else %}
+              <input type="hidden" name="next" value="/" />
+              {% endif %}
+                    
               <button class="button-tour margin-top-sm" style="align-self: center; width:50%;" type="submit" name="button">
                 Entrar
               </button>
