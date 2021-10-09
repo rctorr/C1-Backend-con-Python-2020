@@ -19,21 +19,25 @@
    - Clave: bedutravels
 
 ### DESARROLLO
-1. Agregando Django Graphene a la configuración en el archivo `settings.py` como una aplicación adicional:
+1. Agregando Django Graphene a la configuración en el archivo `settings.py` como una aplicación adicional y también indicando donde está el esquema de la api:
 
-   ```python
-   INSTALLED_APPS = [
-       'django.contrib.admin',
-       'django.contrib.auth',
-       'django.contrib.contenttypes',
-       'django.contrib.sessions',
-       'django.contrib.messages',
-       'django.contrib.staticfiles',
-       'tours',
-       'graphene_django',
-   ]
-   ```
-   ***
+  ```python
+  INSTALLED_APPS = [
+     'django.contrib.admin',
+     'django.contrib.auth',
+     'django.contrib.contenttypes',
+     'django.contrib.sessions',
+     'django.contrib.messages',
+     'django.contrib.staticfiles',
+     'tours',
+     'graphene_django',
+  ]
+
+  GRAPHENE = {
+  'SCHEMA': 'tours.schema.schema' # Where your Graphene schema lives
+  }
+  ```
+  ***
 
 1. Se crea la ruta para la url `/graphql` modificando el archivo `Bedutravels/tours/urls.py`:
 
