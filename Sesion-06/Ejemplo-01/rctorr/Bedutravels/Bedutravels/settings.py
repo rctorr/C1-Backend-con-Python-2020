@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tours',
     'rest_framework',
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'tours.schema.schema' # Where your Graphene schema lives
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
