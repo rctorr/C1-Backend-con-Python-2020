@@ -7,35 +7,28 @@
 ### REQUISITOS
 1. Actualizar repositorio
 1. Usar la carpeta de trabajo `Sesion-03/Ejemplo-02`
-1. Diagrama del modelo entidad-relación para el proyecto __Bedutravels__
+1. Diagrama del modelo entidad-relación para el proyecto __Banco__
 
-   ![Modelo entidad-relación para Bedutravels](assets/bedutravels-modelo-er.png)
+   ![Modelo entidad-relación](assets/banco-modelo-er.jpg)
 
 1. Documentación de Django referente a modelos:
-   - Descripción de modelos y ejemplos: https://docs.djangoproject.com/en/2.2/topics/db/models/
-   - Referencia a la API de Modelos en Django https://docs.djangoproject.com/en/2.2/ref/models/
-   - Referencia a los tipos de datos que maneja Django https://docs.djangoproject.com/en/2.2/ref/models/fields/#field-types
+   - Descripción de modelos y ejemplos: https://docs.djangoproject.com/en/4.0/topics/db/models/
+   - Referencia a la API de Modelos en Django https://docs.djangoproject.com/en/4.0/ref/models/
+   - Referencia a los tipos de datos que maneja Django https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types
 
 ### DESARROLLO
-1. Usando el modelo entidad-relación, crear la tabla Tour y su relación con la tabla Zona.
+1. Usando el modelo entidad-relación, crear la tabla Tarjeta y su relación con la tabla Cliente.
 
    ```python
-   class Tour(models.Model):
-       """ Define la tabla Tour """
+   class Tarjeta(models.Model):
+       """ Define la tabla Tarjeta """
        nombre = models.CharField(max_length=145)
-       slug = models.CharField(max_length=45, null=True, blank=True)
-       operador = models.CharField(max_length=45, null=True, blank=True)
-       tipoDeTour = models.CharField(max_length=45, null=True, blank=True)
        descripcion = models.CharField(max_length=256)
-       img = models.CharField(max_length=256, null=True, blank=True)
-       pais = models.CharField(max_length=45, null=True, blank=True)
-       zonaSalida = models.ForeignKey(Zona, on_delete=models.SET_NULL, null=True,
-           blank=True, related_name="tours_salida")
-       zonaLlegada = models.ForeignKey(Zona, on_delete=models.SET_NULL, null=True,
-           blank=True, related_name="tours_llegada")
+       interes = model.FloatField(default=0.0)
+       cliente = models.ForeignKey(Cliente, on_delete=models.SET_NULL)
 
        def __str__(self):
-           return "{}".format(self.nombre)
+           return self.nombre
    ```
    Observar el uso del tipo de dato de Django ForeignKey donde el parámetro `on_delete=models.SET_NULL` indica que en caso de que la Zona se borre, el registro relacionado en Tour se asigne un valor de nulo.
 
