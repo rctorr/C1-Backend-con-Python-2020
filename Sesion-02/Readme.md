@@ -14,20 +14,15 @@ El alumno identificará las bases de datos compatibles con Django, instalará e 
    - [Ejemplo 02](Ejemplo-02)
  - Inicializando Django con PostgreSQL
    - [Ejemplo 03](Ejemplo-03)
-  - Inicializando un servidor MariaDB y una base de datos haciendo uso de 
-
-Contenedores
-   - [Ejemplo 04](Ejemplo-04)
-   - [Reto 01](Reto-01)
  - Operación READ: Lectura de datos con Python y MariaDB
-   - [Ejemplo 05](Ejemplo-05)
+   - [Ejemplo 04](Ejemplo-04)
    - [Reto 02](Reto-02)
  - Operación CREATE: Agregando datos con Python y MariaDB
-   - [Ejemplo 06](Ejemplo-06)
+   - [Ejemplo 05](Ejemplo-05)
  - Operación UPDATE: Modificando datos con Python y MariaDB
    - [Reto 03](Reto-03)
  - Automatizando la ejecución de archivos SQL con Python
-   - [Ejemplo 07](Ejemplo-07)
+   - [Ejemplo 06](Ejemplo-06)
 
 ## Postwork
  - Bases de datos relacionales con Python y MariaDB aplicado a tú Proyecto.
