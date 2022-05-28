@@ -12,7 +12,7 @@
 1. Activar el entorno virtual __Banco__
 
 #### DESARROLLO
-1. Crear la aplicación ____ con:
+1. Crear la aplicación __servicios__ con:
 
    ```console
    python3 manage.py startapp servicios

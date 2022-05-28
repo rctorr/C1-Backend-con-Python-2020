@@ -4,39 +4,40 @@
 ### OBJETIVOS
 - Conocer como agregar páginas ya maquetadas por medio de las plantillas con Django.
 - Conocer como configurar y agregar los archivos estáticos en una aplicación web con Django.
-- Contar con la página de inicio del proyecto Bedutravels disponible con Django.
+- Contar con la página de inicio del proyecto Banco disponible con Django.
 
 #### REQUISITOS
 1. Actualizar repositorio
-1. Usar la carpeta de trabajo `Sesion-01/Ejemplo-03/django/`
-1. Activar el entorno virtual __django__
+1. Activar el entorno virtual __banco.com__
 1. Página de inicio maquetada del proyecto __Banco__
 
    ![](img/banco-inicio.png)
 
 #### DESARROLLO
-1. Ejecutar el proyecto __Banco__ con:
+1. Ejecutar el proyecto __banco_project__ con:
 
 ```sh
-(django) $ python3 manage.py runserver   
+(base) $ conda activate banco.com
+(banco.com) $ cd Escritorio/banco_project
+(banco.com) banco_project $ python manage.py runserver
+...
 ```
-***
 
-1. Haciendo uso de las plantillas de Django integrar la página de inicio maquetada que se encuentra en `public_html/index.html`.
+1. Haciendo uso del sistema de plantillas de Django, integrar la página de inicio maquetada que se encuentra en `banco.com/public_html/index.html`.
 
-__Crear las carpetas `Banco/tarjeta/templates/tarjeta` para almacenar las plantillas o documentos html para la aplicación `tarjeta`:__
+__Crear las carpetas `banco_prject/banco_app/templates/banco_app` para almacenar las plantillas o documentos html para la aplicación `banco_app`:__
 
 ```sh
-(base) $ mkdir -p tarjeta/templates/tarjeta
+(banco.com) banco_project $ mkdir -p banco_app/templates/banco_app
 ```
 
-__Copiar el archivo `public_html/index.html` dentro de la carpeta `Banco/tarjeta/templates/tarjeta/`:__
+__Copiar el archivo `banco.com/public_html/index.html` dentro de la carpeta `banco_project/banco_app/templates/banco_app/`:__
 
 ```sh
-(base) $ cp public_html/index.html Banco/tarjeta/templates/tarjeta
+(base) $ cp ...banco.com/public_html/index.html banco_project/banco_app/templates/banco_app
 ```
 
-__Modificar la función `index()` en el archivo `tarjeta/views.py` para hacer uso de las plantillas (templates)__
+__Modificar la función `index()` en el archivo `banco_app/views.py` para hacer uso de las plantillas (templates)__
 
 ```python
 from django.shortcuts import render
@@ -44,14 +45,14 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
    """ Vista para atender la petición de la url / """
-   return render(request, "tarjeta/index.html")
+   return render(request, "banco_app/index.html")
 ```
 
 Por omisión, Django busca los archivos html en la carpeta `proyecto/aplicacion/templates/aplicacion/`
 
 __El resultado en el navegador debería de ser el siguiente:__
 
-![Plantilla Inicio](img/plantilla-inicio.png)
+![Plantilla Inicio](img/banco_project-inicio.png)
 
 Hasta aquí ya podemos ver el html, pero ¿y los estilos y las imágenes?
 
@@ -60,35 +61,40 @@ Como son archivos estáticos aún no hemos autorizado a que se puedan ver, así 
 
 1. Agregando acceso a los archivos estáticos (ruta y vista)
 
-__Crear la carpeta `Banco/tarjeta/static/tarjeta/`:__
+__Crear la carpeta `banco_project/banco_app/static/banco_app/`:__
 
 ```sh
-(base) $ mkdir -p tarjeta/static/tarjeta
+(base) $ mkdir -p banco_app/static/banco_app
 ```
 
-__Copiar las carpetas de los archivos estáticos (css, fonts, images y js):__
+__Copiar las carpetas de los archivos estáticos (bootstrap, css, fonts, images, jquery y js):__
 
 ```sh
-(base) $ cp -av public_html/css public_html/fonts public_html/images public_html/js Banco/tarjeta/static/tarjeta/
+(base) $ cp -av public_html/bootstrap public_html/css public_html/fonts public_html/images public_html/jquery public_html/js Banco/banco_app/static/banco_app/
 
-(base) $ tree tarjeta/static/
-tarjeta/static/
-└── tarjeta
+(base) $ tree banco_app/static/
+banco_app/static/
+└── banco_app
+    ├── bootstrap
     ├── css
     ├── fonts
     ├── images
+    ├── jquery
     └── js
-
-5 directories, 0 files
 ```
 
 __Finalmente hay que modificar la ruta en el archivo `index.html` para que usen el sistema de Django__
 
-Todas las url relativas o absolutas ahora tienen que ser absolutas e iniciar con `/static/tarjeta/`, un ejemplos se muestra a continuación:
+Primero cargamos el sistema que nos ayuda a mejar los archivos estáticos con:
+
+```
+{% load static %}
+```
+
+Y ahora todas las url relativas o absolutas ahora tienen que ser de la forma  `{% static 'banco_app/...' %}`, un ejemplos se muestra a continuación:
 
 ```html
-<!-- Animate.css -->
-<link rel="stylesheet" href="/static/tarjeta/css/index.css">
+<link href="{% static 'banco_app/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 ```
 Remplazar todas las coincidencias.
 

@@ -92,7 +92,7 @@ __Activaremos nuevamente el entorno para continuar:__
 ```
 ***
 
-2. PInstalación del paquete / framework Django:
+2. Instalación del paquete / framework Django:
 
 __La instalación se realiza con el comando pip dentro del entorno virtual:__
 
